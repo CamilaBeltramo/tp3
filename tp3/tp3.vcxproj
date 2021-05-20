@@ -141,9 +141,8 @@
   <ItemGroup>
     <ClCompile Include="cAuto.cpp" />
     <ClCompile Include="cCamioneta.cpp" />
-    <ClCompile Include="cLista_alquiler.cpp" />
-    <ClCompile Include="cLista_cliente.cpp" />
-    <ClCompile Include="cLista_vehiculo.cpp" />
+    <ClCompile Include="cAlquiler.cpp" />
+    <ClCompile Include="cCliente.cpp" />
     <ClCompile Include="cTrafic.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
     <ClCompile Include="cFecha.cpp" />
@@ -154,9 +153,8 @@
     <ClInclude Include="cCamioneta.h" />
     <ClInclude Include="cFecha.h" />
     <ClInclude Include="cLista.h" />
-    <ClInclude Include="cLista_alquiler.h" />
-    <ClInclude Include="cLista_cliente.h" />
-    <ClInclude Include="cLista_vehiculo.h" />
+    <ClInclude Include="cAlquiler.h" />
+    <ClInclude Include="cCliente.h" />
     <ClInclude Include="cMoto.h" />
     <ClInclude Include="cTrafic.h" />
     <ClInclude Include="cVehiculo.h" />

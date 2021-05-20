@@ -6,31 +6,32 @@
 //  Created on:      19-may.-2021 17:33:15
 //  Original author: beltr
 ///////////////////////////////////////////////////////////
-
+#include <iostream>
+#include <ctime>
 using namespace std;
 #include <string>
-class cFecha;
+#include "cFecha.h"
+
 
 class cVehiculo
 {
-	friend class cLista_vehiculo;
+	friend class cAlquiler; 
 public:
-	cVehiculo(int capacidad_pasajeros, string color,cFecha* fecha_ult_mantenimiento, int numero_chasis, string patente, int poliza, int precio_alquiler );
+	cVehiculo(int precio_dia, int capacidad_pasajeros, string color, cFecha* fecha_ult_mantenimiento, int numero_chasis, string patente, int poliza, int precio_alquiler);
 	virtual ~cVehiculo();
-
-	virtual int calcular_tarifa()=0;
 	virtual void pasos_mantenimiento();
-	virtual bool accesorios()=0;
-	void imprimir();
+	
+	//void imprimir();
 	//tostring
 
-private:
+protected:
+	int precio_dia;
 	int capacidad_pasajeros;
 	string color;
 	cFecha* fecha_ult_mantenimiento;
 	int numero_chasis;
 	string patente;
 	int poliza;
-	int precio_alquiler;
+	int precio_alquiler;//es la tarifa inicial fija para este vehiculo 
 
 };
