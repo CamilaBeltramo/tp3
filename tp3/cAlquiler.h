@@ -16,6 +16,7 @@ public:
 	int calcular_tarifa(); 
 	void Imprimir();
 	string toString();
+	int operador_suma (int a, int b) ;
 
 private:
 	cFecha* fecha_fin;

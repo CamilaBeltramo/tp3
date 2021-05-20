@@ -147,6 +147,7 @@
     <ClCompile Include="cVehiculo.cpp" />
     <ClCompile Include="cFecha.cpp" />
     <ClCompile Include="cMoto.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cAuto.h" />

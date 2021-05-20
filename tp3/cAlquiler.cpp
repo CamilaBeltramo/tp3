@@ -25,6 +25,7 @@ cAlquiler::~cAlquiler() {
 int cAlquiler::calcular_tarifa()
 {
 	int suma = vehiculo->precio_alquiler + (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro()) * (vehiculo->precio_dia);
+	//if(dynamic_cast<cMoto*>)
 	//+precio_accesorio de cada vehiculo  * fecha fin- fecha inicio)
 	return suma;
 }
