@@ -19,10 +19,13 @@ class cVehiculo
 public:
 	cVehiculo(int precio_dia, int capacidad_pasajeros, string color, cFecha* fecha_ult_mantenimiento, int numero_chasis, string patente, int poliza, int precio_alquiler);
 	virtual ~cVehiculo();
-	virtual void pasos_mantenimiento();
-	
-	//void imprimir();
-	//tostring
+	void pasos_mantenimiento();
+	void Imprimir();
+	string ToString();
+	virtual int Get_accesorios() = 0; 
+	 friend ostream& operator<<(ostream& os,  cVehiculo& C);
+	int getclave();
+
 
 protected:
 	int precio_dia;

@@ -10,18 +10,26 @@ cTrafic::~cTrafic()
 {
 }
 
+int cTrafic::Get_accesorios()
+{
+	return sillaDeSeg+asientito;
+}
+
 void cTrafic::Imprimir()
 {
 	cout << " " << toString() << endl;
 }
 
-string cTrafic::toString()
+string cTrafic::toString() 
 {
 	string aux;
-	aux = "\nCapacidad de pasajeros : " + to_string(capacidad_pasajeros) + "\nColor :  " + color +
-		"\nNumero de chasis  :  " + to_string(numero_chasis) + "\n Patente:  " + patente + "\n Poliza: " + to_string(poliza) +
-		"\n Silla de seguridad  : " + to_string(sillaDeSeg) + "\n Asiento extra : " + to_string(asientito) + to_string(fecha_ult_mantenimiento.Getfecha());
+	aux ="\n Silla de seguridad  : " + to_string(sillaDeSeg) + "\n Asiento extra : " + to_string(asientito) + cVehiculo::ToString();
 	return aux;
 
 }
 
+ostream& operator<<(ostream& os,  cTrafic& C)
+{
+	os << C.toString();
+	return os;
+}

@@ -21,6 +21,7 @@ public:
 	virtual ~cCliente();
 	void Imprimir();
 	string toString();
+	int getclave();
 
 };
 

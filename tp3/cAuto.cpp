@@ -10,17 +10,26 @@ cAuto::~cAuto()
 {
 }
 
+int cAuto::Get_accesorios()
+{
+	return sillaDeSeg;
+}
+
 void cAuto::Imprimir()
 {
 	cout << " " << toString() << endl;
 }
 
-string cAuto::toString()
+string cAuto::toString() 
 {
 	string aux;
-	aux = "\nCapacidad de pasajeros : " + to_string(capacidad_pasajeros) + "\nColor :  " + color +
-		"\nNumero de chasis  :  " + to_string(numero_chasis) + "\n Patente:  " + patente + "\n Poliza: " + to_string(poliza) +
-		"\n Silla de seguridad  : " + to_string(sillaDeSeg) +  to_string(fecha_ult_mantenimiento.Getfecha());
+	aux = "\n Silla de seguridad  : " + to_string(sillaDeSeg) + cVehiculo::ToString();
 	return aux;
 
+}
+
+ostream& operator<<(ostream& os,  cAuto& C)
+{
+	os << C.toString();
+	return os;
 }

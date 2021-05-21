@@ -35,4 +35,9 @@ string cCliente::toString()
 	return aux;
 }
 
+int cCliente::getclave()
+{
+	return telefono;
+}
+
 

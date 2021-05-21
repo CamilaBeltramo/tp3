@@ -2,6 +2,7 @@
 #include <string>
 #include<string.h>
 #include<iostream>
+#include "cVehiculo.h"
 #define MAX 300
 
 using namespace std;
@@ -12,6 +13,7 @@ protected:
 	T** vector;
 	int CA, TAM;
 
+
 public:
 	cLista(int TAM = MAX);
 	bool Agregar(T* ptr);
@@ -20,7 +22,11 @@ public:
 	int getPos(string clave);
 	void Listar();
 	void ListarP();
+	cLista<T>& operator+ (T* ptr);
+	cLista<T>& operator[] (unsigned int pos);
 	~cLista();
+
+
 };
 
 
@@ -36,7 +42,8 @@ cLista<T>::cLista(int TAM)
 	this->TAM = TAM;
 	CA = 0;
 
-};
+}
+
 
 template<class T>
 bool cLista<T>::Agregar(T* ptr)
@@ -115,6 +122,21 @@ void cLista<T> ::ListarP()
 }
 
 template<class T>
+inline cLista<T>& cLista<T>::operator+(T* ptr)
+{
+	this->Agregar(ptr);
+	return *this;
+}
+
+template<class T>
+cLista<T>& cLista<T>::operator[](unsigned int pos)
+{
+	if (pos < CA)
+		return vector[pos];
+	return NULL;
+}
+
+template<class T>
 cLista<T>::~cLista()
 {
 	if (vector != NULL)
@@ -127,7 +149,4 @@ cLista<T>::~cLista()
 		delete[] vector; // elimina la lista
 	}
 
-}
-
-
-
+}	

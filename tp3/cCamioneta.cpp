@@ -8,22 +8,31 @@ cCamioneta::cCamioneta(int capacidad_pasajeros, string color, cFecha* fecha_ult_
 
 
 
+int cCamioneta::Get_accesorios()
+{
+	return sillaDeSeg+portaEq;
+}
+
 void cCamioneta::Imprimir()
 {
 	cout << " " << toString() << endl;
 }
 
-string cCamioneta::toString()
+string cCamioneta::toString() 
 {
 	string aux;
-	aux = "\nCapacidad de pasajeros : " + to_string(capacidad_pasajeros) + "\nColor :  " + color +
-		"\nNumero de chasis  :  " + to_string(numero_chasis) + "\n Patente:  " + patente + "\n Poliza: " + to_string(poliza) +
-		"\n Silla de seguridad : " + to_string(sillaDeSeg) + "\nPorta equipaje : " + to_string(portaEq)
-		+ to_string(fecha_ult_mantenimiento.Getfecha()); 
+	aux = "\n Silla de seguridad : " + to_string(sillaDeSeg) + "\nPorta equipaje : " + to_string(portaEq) + cVehiculo::ToString();
+		
 	return aux;
 	
 }
    
 cCamioneta::~cCamioneta()
 {
+}
+
+ostream& operator<<(ostream& os,  cCamioneta& C)
+{
+	os << C.toString();
+	return os;
 }
