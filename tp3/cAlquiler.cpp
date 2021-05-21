@@ -21,34 +21,41 @@ cAlquiler::cAlquiler( int nro_alquiler, cCliente* cliente, cFecha* fecha_fin, cF
 
 
 cAlquiler::~cAlquiler() {
-
+	delete cliente;
+	delete fecha_fin;
+	delete fecha_inicio;
+	delete vehiculo;
 }
 
 int cAlquiler::calcular_tarifa()
 {
-	int suma = vehiculo->precio_alquiler + (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro()) * (vehiculo->precio_dia);
-	//if(dynamic_cast<cMoto*>)
-	//+precio_accesorio de cada vehiculo  * fecha fin- fecha inicio)
-	cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
-	if (aux_moto != NULL) {
-		suma += aux_moto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
-		return suma;
+	if (this->vehiculo != NULL)
+	{
+		int suma = vehiculo->precio_alquiler + (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro()) * (vehiculo->precio_dia);
+		//if(dynamic_cast<cMoto*>)
+		//+precio_accesorio de cada vehiculo  * fecha fin- fecha inicio)
+		cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
+		if (aux_moto != NULL) {
+			suma += aux_moto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
+			return suma;
+		}
+		cAuto* aux_auto = dynamic_cast<cAuto*>(vehiculo);
+		if (aux_auto != NULL) {
+			suma += aux_auto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
+			return suma;
+		}
+		cTrafic* aux_trafic = dynamic_cast<cTrafic*>(vehiculo);
+		if (aux_trafic != NULL) {
+			suma += aux_trafic->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
+			return suma;
+		}
+		cCamioneta* aux_camioneta = dynamic_cast<cCamioneta*>(vehiculo);
+		if (aux_camioneta != NULL) {
+			suma += aux_camioneta->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
+			return suma;
+		}
 	}
-	cAuto* aux_auto = dynamic_cast<cAuto*>(vehiculo);
-	if (aux_auto != NULL) {
-		suma += aux_auto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
-		return suma;
-	}
-	cTrafic* aux_trafic = dynamic_cast<cTrafic*>(vehiculo);
-	if (aux_trafic != NULL) {
-		suma += aux_trafic->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
-		return suma;
-	}
-	cCamioneta* aux_camioneta = dynamic_cast<cCamioneta*>(vehiculo);
-	if (aux_camioneta != NULL) {
-		suma += aux_camioneta->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
-		return suma;
-	}
+	return 0;
 }
 
 void cAlquiler::Imprimir()

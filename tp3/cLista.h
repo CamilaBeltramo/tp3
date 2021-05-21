@@ -17,9 +17,9 @@ protected:
 public:
 	cLista(int TAM = MAX);
 	bool Agregar(T* ptr);
-	T* Quitar(string clave);
+	T* Quitar(int clave);
 	T* getrandom();
-	int getPos(string clave);
+	int getPos(int clave);
 	void Listar();
 	void ListarP();
 	cLista<T>& operator+ (T* ptr);
@@ -65,7 +65,7 @@ bool cLista<T>::Agregar(T* ptr)
 }
 
 template<class T>
-T* cLista<T>::Quitar(string clave)
+T* cLista<T>::Quitar(int clave)
 {
 	int pos = getPos(clave);
 	if (pos >= CA || pos == -1) // el elemento no esta en la lista
@@ -91,7 +91,7 @@ T* cLista<T>::getrandom()
 }
 
 template<class T>
-int cLista<T>::getPos(string clave)
+int cLista<T>::getPos(int clave)
 {
 	for (int i = 0; i < CA; i++)
 	{

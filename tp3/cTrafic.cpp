@@ -8,6 +8,7 @@ cTrafic::cTrafic(int capacidad_pasajeros, string color, cFecha* fecha_ult_manten
 
 cTrafic::~cTrafic()
 {
+	delete fecha_ult_mantenimiento;
 }
 
 int cTrafic::Get_accesorios()

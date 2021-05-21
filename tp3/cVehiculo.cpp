@@ -1,5 +1,6 @@
-#include "cVehiculo.h"
 #define _CRT_SECURE_NO_WARNINGS
+
+#include "cVehiculo.h"
 
 
 

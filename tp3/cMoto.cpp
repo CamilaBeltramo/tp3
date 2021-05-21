@@ -8,6 +8,7 @@ cMoto::cMoto(int capacidad_pasajeros, string color, cFecha* fecha_ult_mantenimie
 
 cMoto::~cMoto()
 {
+	delete fecha_ult_mantenimiento;
 }
 
 void cMoto::Imprimir()

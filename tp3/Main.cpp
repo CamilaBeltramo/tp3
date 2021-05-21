@@ -22,7 +22,8 @@ int main() {
 	cVehiculo* traf = new cTrafic(6, "azul", fecha4, 8325, "AC789DM", 7894, 35000, 2, 1);
 	cCliente* cliente1 = new cCliente("candela", "neumann", 2364651881);
 	cCliente* cliente2 = new cCliente("gonzalo", "chemaya", 2364656941);
-	cAlquiler* alquiler = new cAlquiler(cliente1, fecha1 = new cFecha(5, 3, 2020), fecha2, 0, aut);
+	cAlquiler* alquiler = new cAlquiler(1, cliente1, fecha1 = new cFecha(5, 3, 2020), fecha2, 0, aut);
+
 
 	cLista<cCliente>* Listaclientes = new cLista<cCliente>(50);
 	cLista<cVehiculo>* Listavehiculo = new cLista<cVehiculo>(200);
@@ -35,16 +36,12 @@ int main() {
 	Listavehiculo->Agregar(traf);
 	Listaclientes->Agregar(cliente1);
 	Listaalquiler->Agregar(alquiler);
+	Listavehiculo->Quitar(aut->getclave());
+	mot->pasos_mantenimiento();
+	Listavehiculo->Quitar(mot->getclave());
 
-	
+	Listaalquiler->Listar();
 
-
-
-
-
-
-	Listaclientes->Agregar(cliente2);
-	
 
 
 	delete Listaclientes;
