@@ -32,11 +32,10 @@ int cAlquiler::calcular_tarifa()
 	if (this->vehiculo != NULL)
 	{
 		int suma = vehiculo->precio_alquiler + (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro()) * (vehiculo->precio_dia);
-		//if(dynamic_cast<cMoto*>)
-		//+precio_accesorio de cada vehiculo  * fecha fin- fecha inicio)
-		cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
+
+		cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo); //castea que tipo de vehiculo es, y en base a eso utiliza el precio de los accesorios correspondientes
 		if (aux_moto != NULL) {
-			suma += aux_moto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro());
+			suma += aux_moto->Get_accesorios() * (fecha_fin->Get_fecha_nro() - fecha_inicio->Get_fecha_nro()); //multiplica el precio por la cantidad de dias a usar
 			return suma;
 		}
 		cAuto* aux_auto = dynamic_cast<cAuto*>(vehiculo);
@@ -68,7 +67,7 @@ string cAlquiler::toString()
 	string aux;
 	aux = "\nCliente : " + cliente->toString() + "\n Numero de orden : " + to_string(nro_alquiler) + "\nFecha fin :  " + fecha_fin->getFecha() +
 		"\nFecha inicio :  " + fecha_inicio->getFecha() + "\n Monto total:  " + to_string(monto_total); 
-	cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo);
+	cMoto* aux_moto = dynamic_cast<cMoto*>(vehiculo); //castea el tipo de vehiculo, y imprime lo particular de cada vehiculo
 	if (aux_moto != NULL) {
 		aux += "\n Datos de la moto : " + aux_moto->toString();
 		return aux;

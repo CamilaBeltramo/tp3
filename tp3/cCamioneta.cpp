@@ -29,7 +29,7 @@ string cCamioneta::toString()
    
 cCamioneta::~cCamioneta()
 {
-	delete fecha_ult_mantenimiento;
+	
 }
 
 ostream& operator<<(ostream& os,  cCamioneta& C)

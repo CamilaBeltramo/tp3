@@ -20,23 +20,24 @@ cVehiculo::cVehiculo(int precio_dia,int capacidad_pasajeros, string color, cFech
 
 
 cVehiculo::~cVehiculo() {
-	delete fecha_ult_mantenimiento;
+	if (fecha_ult_mantenimiento != NULL)
+	{
+		delete fecha_ult_mantenimiento;  
+	}
+	
 }
 
 void cVehiculo::pasos_mantenimiento()
 {
 	cout << "1) chequear aire de las ruedas \n 2) chequear aceite \n 3) chequear luces \n 4) chequear freno \n " << endl ;
-
+	//actualiza la fecha de ultimo mantenimiento 
 	
-	std::time_t t = std::time(0);   // get time now
+	std::time_t t = std::time(0);   // get time  
 	std::tm* now = std::localtime(&t);
 	fecha_ult_mantenimiento->Set_dia(now->tm_mday);
 	fecha_ult_mantenimiento->Set_dia(now->tm_mon+1);
 	fecha_ult_mantenimiento->Set_dia(now->tm_mday);
-	//actualizar fecha_ult_mantenimiento;
-	//fecha_ult_mantenimiento.Set_dia(tm::tm_mday);
-	/*fecha_ult_mantenimiento.Set_mes(tm::tm_mon);
-	fecha_ult_mantenimiento.Set_anio(tm::tm_year);*/
+	
 	
 }
 

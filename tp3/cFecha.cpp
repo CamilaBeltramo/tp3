@@ -8,6 +8,12 @@ cFecha::cFecha(int dia, int mes, int anio)
 
 }
 
+cFecha::~cFecha()
+{
+	
+}
+
+
 string cFecha::getFecha()
 {
 	string aux;
@@ -53,8 +59,4 @@ int cFecha::Set_anio(int anio_mant)
 	return anio;
 }
 
-//string cFecha::Set_fecha()
-//{
-//	string aux
-//	return string();
-//}
+

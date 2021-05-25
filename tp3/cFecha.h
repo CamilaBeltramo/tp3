@@ -13,15 +13,16 @@ protected:
 
 public:
 	cFecha(int dia, int mes, int anio);
+	~cFecha();
 	//hacemos un string que	tiene tdos los datos de la fecha
 	string getFecha();
-	int Get_fecha_nro();
+	int Get_fecha_nro(); //int sumando los numeros de las fechas 
 	int Get_dia();
 	int Get_mes();
 	int Get_anio();
 	int Set_dia(int dia_mant);
 	int Set_mes(int mes_mant);
 	int Set_anio(int anio_mant);
-	//string Set_fecha();
+
 
 };

@@ -8,7 +8,7 @@ cAuto::cAuto( int capacidad_pasajeros, string color, cFecha* fecha_ult_mantenimi
 
 cAuto::~cAuto()
 {
-	delete fecha_ult_mantenimiento;
+	
 }
 
 int cAuto::Get_accesorios()

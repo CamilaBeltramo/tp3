@@ -17,8 +17,11 @@ class cAlquiler
 public:
 	cAlquiler( int nro_alquiler,cCliente* cliente, cFecha* fecha_fin, cFecha* fecha_inicio, int monto_total, cVehiculo* vehiculo);
 	~cAlquiler();
+	//calcular el costo final de alquiler que consta de una tarifa base + un precio por día
 	int calcular_tarifa(); 
+	//imprime datos. llama a la funcion toString
 	void Imprimir();
+	//unifica los atributos del paciente a un string y lo retorna
 	string toString();
 	int getclave();
 

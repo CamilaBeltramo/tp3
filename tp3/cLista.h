@@ -4,6 +4,7 @@
 #include<iostream>
 #include "cVehiculo.h"
 #define MAX 300
+//LISTA TEMPLATE
 
 using namespace std;
 template<class T>
@@ -18,12 +19,14 @@ public:
 	cLista(int TAM = MAX);
 	bool Agregar(T* ptr);
 	T* Quitar(int clave);
-	T* getrandom();
+	
 	int getPos(int clave);
 	void Listar();
 	void ListarP();
-	cLista<T>& operator+ (T* ptr);
-	cLista<T>& operator[] (unsigned int pos);
+	cLista<T>& operator+ (T* ptr); //Sobrecargar el método suma para poder agregar items a una lista.
+	cLista<T>& operator[] (unsigned int pos); //Sobrecargar el operador corchetes para acceder a
+	//un elemento de la lista de una cierta posición.
+
 	~cLista();
 
 
@@ -84,11 +87,6 @@ T* cLista<T>::Quitar(int clave)
 
 }
 
-template<class T>
-T* cLista<T>::getrandom()
-{
-	return vector[rand() % CA];
-}
 
 template<class T>
 int cLista<T>::getPos(int clave)

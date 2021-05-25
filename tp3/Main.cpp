@@ -40,16 +40,12 @@ int main() {
 	mot->pasos_mantenimiento();
 	Listavehiculo->Quitar(mot->getclave());
 
-	Listaalquiler->Listar();
+	alquiler->Imprimir();
 
 
-
-	delete Listaclientes;
-	delete Listavehiculo;
-	delete Listaalquiler;
 	delete fecha1;
 	delete fecha2;
-	delete fecha3; 
+	delete fecha3;
 	delete fecha4;
 	delete camio;
 	delete aut;
@@ -58,6 +54,9 @@ int main() {
 	delete cliente1;
 	delete cliente2;
 	delete alquiler;
+	delete Listaclientes;
+	delete Listavehiculo;
+	delete Listaalquiler;
 
 
 

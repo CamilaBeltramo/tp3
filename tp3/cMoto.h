@@ -7,12 +7,12 @@ using namespace std;
 
 class cMoto :
 	
-	public cVehiculo
+	public cVehiculo //clase abstracta 
 	
 {
 
 protected:
-	int cascos;
+	int cascos; //accesorio
 	
 
 public:
@@ -22,7 +22,7 @@ public:
 	void Imprimir();
 	string toString();
 	int Get_accesorios();
-	friend ostream& operator<<(ostream& os, cMoto& C);
+	friend ostream& operator<<(ostream& os, cMoto& C); //Sobrecargar el operador de impresión para poder imprimir los datos de un vehiculo.
 	~cMoto();
 
 };
